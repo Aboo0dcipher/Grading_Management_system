@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grading System Management</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Login Section -->
+    <div id="login-section">
+      <h2>Login</h2>
+      <form id="login-form">
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" required>
+        <label for="role">Role:</label>
+        <select id="role">
+          <option value="student">Student</option>
+          <option value="faculty">Faculty</option>
+        </select>
+        <button type="submit">Login</button>
+        <p class="error" id="login-error"></p>
+      </form>
+    </div>
+
+    <!-- Faculty Dashboard -->
+    <div id="faculty-dashboard" style="display: none;">
+      <h2>Faculty Dashboard</h2>
+      <div id="assigned-courses"></div>
+    </div>
+
+    <!-- Marks Entry Section -->
+    <div id="marks-entry-section">
+      <h3>Enter Marks for <span id="component-name"></span> - <span id="course-name"></span></h3>
+      <table id="marks-table">
+        <thead>
+          <tr>
+            <th>Student Name</th>
+            <th>PRN</th>
+            <th>Saved Marks</th>
+            <th>Enter New Marks</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Student rows will be added here -->
+        </tbody>
+      </table>
+
+      <button onclick="submitMarks()">Save All Marks</button>
+    </div>
+
+    <!-- Student Dashboard -->
+    <div id="student-dashboard" style="display: none;">
+      <h2>Student Dashboard</h2>
+      <button onclick="viewComponentMarks('CA1')">View CA1 Marks</button>
+      <button onclick="viewComponentMarks('CA2')">View CA2 Marks</button>
+      <button onclick="viewComponentMarks('CA3')">View CA3 Marks</button>
+      <button onclick="viewComponentMarks('CA4')">View CA4 Marks</button>
+      <button onclick="viewComponentMarks('ESE')">View ESE Marks</button>
+      <button onclick="viewEntireResult()">View Entire Result</button>
+      <div id="marks-result"></div>
+    </div>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
